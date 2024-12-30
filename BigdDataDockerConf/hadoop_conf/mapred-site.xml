@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<configuration>
+<!-- 指定mapreduce使用yarn资源管理器-->
+        <property>
+                <name>mapreduce.framework.name</name>
+                <value>yarn</value>
+        </property>
+<!-- 配置作业历史服务器的地址-->
+        <property>
+                <name>mapreduce.jobhistory.address</name>
+                <value>192.168.1.10:10020</value>
+        </property>
+<!-- 配置作业历史服务器的http地址-->
+        <property>
+                <name>mapreduce.jobhistory.webapp.address</name>
+                <value>192.168.1.10:19888</value>
+        </property>
+<!--确保 MapReduce 应用程序能够正确地找到 Hadoop 分发目录并加载所需的类和资源  否者会导致hive使用异常-->
+        <property>
+       		<name>yarn.app.mapreduce.am.env</name>
+        	<value>HADOOP_MAPRED_HOME=${HADOOP_HOME}</value>
+	</property>
+	<property>
+      		<name>mapreduce.map.env</name>
+      		<value>HADOOP_MAPRED_HOME=${HADOOP_HOME}</value>
+		</property>
+	<property>
+       		 <name>mapreduce.reduce.env</name>
+      		 <value>HADOOP_MAPRED_HOME=${HADOOP_HOME}</value>
+	</property>   
+</configuration>

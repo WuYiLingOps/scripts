@@ -1,0 +1,57 @@
+#!/bin/bash
+# author YiLing Wu (hj)
+# date 2023-12-23 15:21
+# description: yum安装docker
+
+#卸载旧版Docker
+remove_old_version(){
+sudo yum remove docker \
+docker-client \
+docker-client-latest \
+docker-common \
+docker-latest \
+docker-latest-logrotate \
+docker-logrotate \
+docker-engine
+}
+
+#阿里的镜像仓库
+use_aliyun_images(){
+yum install -y yum-utils
+yum-config-manager \
+    --add-repo \
+    http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
+}
+
+#依赖安装,docker安装
+yum_update_install(){
+yum install docker-ce docker-ce-cli containerd.io -y
+}
+
+#配置镜像加速
+aliyun_speed_up(){
+mkdir -p /etc/docker
+cat >/etc/docker/daemon.json <<EOF
+{
+  "registry-mirrors": ["https://r1238ywt.mirror.aliyuncs.com"]
+}
+EOF
+#启动服务
+sudo systemctl daemon-reload
+sudo systemctl restart docker
+sudo systemctl enable docker
+docker info | grep aliyuncs.com >/dev/null
+if [ $? -eq 0 ];then
+  echo -e "\033[32m>>docker配置完成 \033[0m"
+fi
+}
+
+main(){
+remove_old_version
+use_aliyun_images
+yum_update_install
+aliyun_speed_up
+}
+
+#调用
+main

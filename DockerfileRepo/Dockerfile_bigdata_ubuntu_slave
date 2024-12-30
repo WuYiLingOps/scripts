@@ -1,0 +1,33 @@
+# author YiLing Wu (hj)
+# date 2024-12-23 15:21
+# description: 封装基础环境镜像,不包含基础安装包 
+
+# 本人阿里云镜像仓库镜像
+FROM registry.cn-hangzhou.aliyuncs.com/510_repo/ubuntu:20.04.3
+
+# 更新源并安装必要的软件包
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+    openssh-server sudo wget curl tree numactl libaio1 libnuma1 net-tools vim iputils-ping zip unzip lsof && \
+    rm -rf /var/lib/apt/lists/*
+
+# 配置SSH服务
+RUN sed -i 's/#GSSAPIAuthentication yes/GSSAPIAuthentication no/g' /etc/ssh/sshd_config && \
+    sed -i 's/#GSSAPICleanupCredentials no/GSSAPICleanupCredentials no/g' /etc/ssh/sshd_config && \
+    echo "PermitRootLogin yes" >> /etc/ssh/sshd_config && \
+    echo "root:1" | chpasswd && \
+    echo "root   ALL=(ALL)       ALL" >> /etc/sudoers && \
+    mkdir -p /var/run/sshd /opt/software /opt/module && \
+    chmod -R 755 /opt/software /opt/module
+
+# 启动SSH服务的脚本
+RUN echo '#!/bin/bash \n\
+/usr/sbin/sshd \n\
+tail -f /dev/null' > /start.sh && \
+    chmod +x /start.sh
+
+# 暴露SSH端口
+EXPOSE 22
+
+# 使用启动脚本
+ENTRYPOINT ["/start.sh"]

@@ -1,0 +1,36 @@
+# Author: YiLing Wu (hj)
+# Date: 2024-12-23
+# Description: 基于提前构建的 sshjdk:guet 镜像，使用多阶段构建 Hive 环境。需要手动初始化并配置 MySQL 地址。
+
+# 第一阶段：构建 Hive 环境
+FROM hadoop:guet AS build
+
+# 下载并解压 Hive
+ADD http://10.33.210.121/bigdata/apache-hive-3.1.2-bin.tar.gz /tmp/
+RUN mkdir /opt/software && \
+    tar -zxf /tmp/apache-hive-3.1.2-bin.tar.gz -C /opt/software && \
+    rm -rf /tmp/apache-hive-3.1.2-bin.tar.gz && \
+    ln -s /opt/software/apache-hive-3.1.2-bin /opt/module/hive && \
+    rm -rf /opt/software/apache-hive-3.1.2-bin/lib/guava-19.0.jar
+
+# 第二阶段：生成最终镜像
+FROM hadoop:guet
+
+# 复制 Hive 安装内容和配置文件
+COPY --from=build /opt/module/hive /opt/module/hive
+COPY ./hive_conf/hive-site.xml /opt/module/hive/conf/
+COPY ./hive_conf/hive-env.sh /opt/module/hive/conf/
+COPY ./hive_conf/log4j.properties /opt/module/hive/conf/
+COPY ./hive_conf/hiveservices.sh /opt/module/hive/bin/
+COPY ./hive_lib/ /opt/module/hive/lib/
+
+# 持久化环境变量
+RUN echo "# Hive Environment Variables" >> /etc/profile.d/bigdata.sh && \
+    echo "export HIVE_HOME=/opt/module/hive" >> /etc/profile.d/bigdata.sh && \
+    echo "export PATH=\$PATH:\$HIVE_HOME/bin" >> /etc/profile.d/bigdata.sh
+
+# 设置工作目录
+WORKDIR /opt/module/hive
+
+# 保持容器运行
+CMD ["tail", "-f", "/dev/null"]

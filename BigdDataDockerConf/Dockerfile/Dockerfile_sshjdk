@@ -1,0 +1,73 @@
+# author YiLing Wu (hj)
+# date 2024-12-23 15:21
+# description: 以 Ubuntu 20.04.3 为基础，通过多阶段构建方式构建大数据基础环境（ssh免密+jdk）
+# 第一阶段：构建阶段
+FROM registry.cn-hangzhou.aliyuncs.com/510_repo/ubuntu:20.04.3 AS build
+
+# 更新系统源并安装必要的软件包
+# 安装 SSH 服务、工具包、网络工具和调试工具
+RUN apt-get update && \
+    mkdir -p /var/run/sshd /opt/software /opt/module /root/.ssh && \
+    apt-get install -y --no-install-recommends \
+    openssh-server sudo wget curl tree numactl libaio1 libnuma1 net-tools vim iputils-ping zip unzip lsof && \
+    rm -rf /var/lib/apt/lists/*
+
+# 配置免密 SSH 登录，每次启动容器时重新生成 SSH 密钥
+RUN echo '#!/bin/bash \n\
+ssh-keygen -t rsa -P "" -f /root/.ssh/id_rsa > /dev/null 2>&1 \n\
+cat /root/.ssh/id_rsa.pub >> /root/.ssh/authorized_keys \n\
+chmod 600 /root/.ssh/authorized_keys' > /init_ssh_key.sh && \
+    chmod +x /init_ssh_key.sh
+
+# 下载并解压 JDK 8
+ADD http://10.33.210.121/bigdata/jdk-8u162-linux-x64.tar.gz /tmp/
+RUN tar -zxf /tmp/jdk-8u162-linux-x64.tar.gz -C /opt/software && \
+    rm -rf /tmp/jdk-8u162-linux-x64.tar.gz && \
+    ln -s /opt/software/jdk1.8.0_162 /opt/module/jdk 
+
+# 配置 JDK 环境变量，写入 /etc/profile.d/bigdata.sh 文件中，确保所有用户都能使用
+RUN echo "#JAVA_HOME" > /etc/profile.d/bigdata.sh && \
+    echo "export JAVA_HOME=/opt/module/jdk" >> /etc/profile.d/bigdata.sh && \
+    echo "export PATH=\$JAVA_HOME/bin:\$PATH" >> /etc/profile.d/bigdata.sh
+
+# 第二阶段：最终镜像
+FROM registry.cn-hangzhou.aliyuncs.com/510_repo/ubuntu:20.04.3
+
+# 安装基础软件包，确保最终镜像包含 SSH 服务和必要工具
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+    openssh-server sudo wget curl tree numactl libaio1 libnuma1 net-tools vim iputils-ping zip unzip lsof && \
+    rm -rf /var/lib/apt/lists/*  
+
+# 配置 SSH 服务
+# 禁用 GSSAPI 认证，允许 root 登录，启用密码认证，确保容器能接受 SSH 连接
+RUN sed -i 's/#GSSAPIAuthentication yes/GSSAPIAuthentication no/g' /etc/ssh/sshd_config && \
+    sed -i 's/#GSSAPICleanupCredentials no/GSSAPICleanupCredentials no/g' /etc/ssh/sshd_config && \
+    echo "PermitRootLogin yes" >> /etc/ssh/sshd_config && \
+    echo "PasswordAuthentication yes" >> /etc/ssh/sshd_config && \
+    echo "PubkeyAuthentication yes" >> /etc/ssh/sshd_config && \
+    echo "root:1" | chpasswd && \
+    echo "root   ALL=(ALL)       ALL" >> /etc/sudoers && \
+    mkdir -p /var/run/sshd /root/.ssh && \
+    chmod -R 700 /root/.ssh
+
+# 复制从构建阶段得到的 JDK 和环境配置文件
+# 将构建阶段生成的 /opt/software 和 /opt/module 目录/init_ssh_key.sh脚本复制到最终镜像中
+COPY --from=build /opt/module/jdk /opt/module/jdk
+COPY --from=build /init_ssh_key.sh /init_ssh_key.sh 
+COPY --from=build /etc/profile.d/bigdata.sh /etc/profile.d/bigdata.sh
+
+# 启动脚本
+# 创建启动脚本，用于生成 SSH 密钥、启动 SSH 服务并保持容器运行
+RUN echo '#!/bin/bash \n\
+/init_ssh_key.sh \n\
+/usr/sbin/sshd \n\
+tail -f /dev/null' > /start.sh && \
+    chmod +x /start.sh
+
+# 暴露 SSH 服务端口
+EXPOSE 22
+
+# 使用启动脚本作为容器的入口点
+ENTRYPOINT ["/start.sh"]
+

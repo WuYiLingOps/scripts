@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<configuration>
+	<!-- NodeManager获取数据的方式shuffle -->
+	<property>
+		<name>yarn.nodemanager.aux-services</name>
+		<value>mapreduce_shuffle</value>
+	</property>
+	<!-- 指定YARN的ResourceManager的地址 -->
+	<property>
+		<name>yarn.resourcemanager.hostname</name>
+		<value>192.168.1.10</value>
+	</property>
+	<!-- yarn的web访问地址 -->
+	<property>
+		<name>yarn.resourcemanager.webapp.address</name>
+		<value>192.168.1.10:8088</value>
+	</property>
+	<property>
+		<name>yarn.resourcemanager.webapp.https.address</name>
+		<value>192.168.1.10:8090</value>
+	</property>
+	<!-- 开启日志聚合功能，方便我们查看任务执行完成之后的日志记录 -->
+	<property>
+		<name>yarn.log-aggregation-enable</name>
+		<value>true</value>
+	</property>
+	<!-- 设置聚合日志在hdfs上的保存时间 -->
+	<property>
+		<name>yarn.log-aggregation.retain-seconds</name>
+		<value>604800</value>
+	</property>
+    <!--是否启动一个线程检查每个任务正使用的物理内存量，如果任务超出分配值，则直接将其杀掉，默认是true -->
+    <property>
+        <name>yarn.nodemanager.pmem-check-enabled</name>
+        <value>false</value>
+    </property>
+    <!--是否启动一个线程检查每个任务正使用的虚拟内存量，如果任务超出分配值，则直接将其杀掉，默认是 true -->
+    <property>
+        <name>yarn.nodemanager.vmem-check-enabled</name>
+        <value>false</value>
+    </property>
+</configuration>

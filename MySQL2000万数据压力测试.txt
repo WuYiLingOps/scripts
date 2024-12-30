@@ -1,0 +1,16 @@
+ DELIMITER $$
+
+CREATE FUNCTION mock_data()
+RETURNS INT
+BEGIN
+DECLARE num INT DEFAULT 20000000;
+DECLARE i INT DEFAULT 0;
+WHILE i < num DO
+INSERT INTO app_user(`name`,`email`,`phone`,`gender`,`password`,`age`)
+VALUES(CONCAT('用户',i),'2548928007qq.com',CONCAT('18',FLOOR(RAND() * ((999999999 - 100000000) + 1000000000))),FLOOR(RAND()  *  2),UUID(),FLOOR(RAND()  *  100));
+SET i =  i + 1;
+END WHILE;
+RETURN i;
+END;
+
+SELECT mock_data(); -- 调用函数

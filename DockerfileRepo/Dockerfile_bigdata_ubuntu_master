@@ -1,0 +1,68 @@
+# author YiLing Wu (hj)
+# date 2024-12-23 15:21
+# description: 封装基础环境镜像,包含基础安装包 
+
+# 本人阿里云镜像仓库镜像
+FROM registry.cn-hangzhou.aliyuncs.com/510_repo/ubuntu:20.04.3
+
+# 更新源并安装必要的软件包
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+    openssh-server sudo wget curl tree numactl libaio1 libnuma1 net-tools vim iputils-ping zip unzip lsof && \
+    rm -rf /var/lib/apt/lists/*
+
+# 配置SSH服务
+RUN sed -i 's/#GSSAPIAuthentication yes/GSSAPIAuthentication no/g' /etc/ssh/sshd_config && \
+    sed -i 's/#GSSAPICleanupCredentials no/GSSAPICleanupCredentials no/g' /etc/ssh/sshd_config && \
+    echo "PermitRootLogin yes" >> /etc/ssh/sshd_config && \
+    echo "root:1" | chpasswd && \
+    echo "root   ALL=(ALL)       ALL" >> /etc/sudoers && \
+    mkdir -p /var/run/sshd /opt/software /opt/module /opt/software/jars /opt/software/mysql && \
+    chmod -R 755 /opt/software /opt/module
+
+# 启动SSH服务的脚本
+RUN echo '#!/bin/bash \n\
+/usr/sbin/sshd \n\
+tail -f /dev/null' > /start.sh && \
+    chmod +x /start.sh
+
+# 下载所有外部文件
+RUN wget -P /opt/software/ http://10.33.148.193/bigdata/clickhouse-21.9.4.35/clickhouse-client-21.9.4.35.tgz && \
+    wget -P /opt/software/ http://10.33.148.193/bigdata/clickhouse-21.9.4.35/clickhouse-common-static-21.9.4.35.tgz && \
+    wget -P /opt/software/ http://10.33.148.193/bigdata/clickhouse-21.9.4.35/clickhouse-common-static-dbg-21.9.4.35.tgz && \
+    wget -P /opt/software/ http://10.33.148.193/bigdata/clickhouse-21.9.4.35/clickhouse-server-21.9.4.35.tgz && \
+    wget -P /opt/software/jars http://10.33.148.193/bigdata/jars/clickhouse-jdbc-0.3.2-all.jar && \
+    wget -P /opt/software/jars http://10.33.148.193/bigdata/jars/hudi-spark3.1-bundle_2.12-0.12.0.jar && \
+    wget -P /opt/software/jars http://10.33.148.193/bigdata/jars/mysql-connector-java-5.1.47.jar && \
+    wget -P /opt/software/jars http://10.33.148.193/bigdata/jars/mysql-connector-java-8.0.16.jar && \
+    wget -P /opt/software/jars http://10.33.148.193/bigdata/jars/spark-avro_2.12-3.1.1.jar && \
+    wget -P /opt/software/mysql http://10.33.148.193/bigdata/mysql/mysql-community-client-5.7.25-1.el7.x86_64.rpm && \
+    wget -P /opt/software/mysql http://10.33.148.193/bigdata/mysql/mysql-community-common-5.7.25-1.el7.x86_64.rpm && \
+    wget -P /opt/software/mysql http://10.33.148.193/bigdata/mysql/mysql-community-libs-5.7.25-1.el7.x86_64.rpm && \
+    wget -P /opt/software/mysql http://10.33.148.193/bigdata/mysql/mysql-community-server-5.7.25-1.el7.x86_64.rpm && \
+    wget -P /opt/software/mysql http://10.33.148.193/bigdata/mysql/mysql-connector-java-5.1.44-bin.jar && \
+    wget -P /opt/software/ http://10.33.148.193/bigdata/RepMaven.tar.gz && \
+    wget -P /opt/software/ http://10.33.148.193/bigdata/apache-dolphinscheduler-3.1.4-bin.tar.gz && \
+    wget -P /opt/software/ http://10.33.148.193/bigdata/apache-flume-1.9.0-bin.tar.gz && \
+    wget -P /opt/software/ http://10.33.148.193/bigdata/apache-hive-3.1.2-bin.tar.gz && \
+    wget -P /opt/software/ http://10.33.148.193/bigdata/apache-maven-3.6.3-bin.tar.gz && \
+    wget -P /opt/software/ http://10.33.148.193/bigdata/apache-zookeeper-3.5.7-bin.tar.gz && \
+    wget -P /opt/software/ http://10.33.148.193/bigdata/azkaban-db-3.84.4.tar.gz && \
+    wget -P /opt/software/ http://10.33.148.193/bigdata/azkaban-exec-server-3.84.4.tar.gz && \
+    wget -P /opt/software/ http://10.33.148.193/bigdata/azkaban-web-server-3.84.4.tar.gz && \
+    wget -P /opt/software/ http://10.33.148.193/bigdata/confluent-5.3.4-2.12.zip && \
+    wget -P /opt/software/ http://10.33.148.193/bigdata/flink-1.14.0-bin-scala_2.12.tgz && \
+    wget -P /opt/software/ http://10.33.148.193/bigdata/hadoop-3.1.3.tar.gz && \
+    wget -P /opt/software/ http://10.33.148.193/bigdata/hbase-2.2.3-bin.tar.gz && \
+    wget -P /opt/software/ http://10.33.148.193/bigdata/hudi-0.12.0.src.tgz && \
+    wget -P /opt/software/ http://10.33.148.193/bigdata/jdk-8u162-linux-x64.tar.gz && \
+    wget -P /opt/software/ http://10.33.148.193/bigdata/kafka_2.12-2.4.1.tgz && \
+    wget -P /opt/software/ http://10.33.148.193/bigdata/maxwell-1.29.0.tar.gz && \
+    wget -P /opt/software/ http://10.33.148.193/bigdata/redis-6.2.6.tar.gz && \
+    wget -P /opt/software/ http://10.33.148.193/bigdata/spark-3.1.1-bin-hadoop3.2.tgz
+
+# 暴露SSH端口
+EXPOSE 22
+
+# 使用启动脚本
+ENTRYPOINT ["/start.sh"]

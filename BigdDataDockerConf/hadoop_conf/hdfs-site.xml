@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<configuration>
+<!-- namenode守护进程管理的元数据文件fsimage存储的位置-->
+        <property>
+                <name>dfs.namenode.name.dir</name>
+                <value>/root/hadoopdir/dfs/name</value>
+        </property>
+<!-- 确定DFS数据节点应该将其块存储在本地文件系统的何处-->
+        <property>
+                <name>dfs.datanode.data.dir</name>
+                <value>/root/hadoopdir/dfs/data</value>
+        </property>
+<!-- 块的副本数-->
+        <property>
+                <name>dfs.replication</name>
+                <value>3</value>
+        </property>
+<!-- 块的大小(128M),下面的单位是字节-->
+        <property>
+                <name>dfs.blocksize</name>
+                <value>134217728</value>
+        </property>
+<!-- secondarynamenode守护进程的http地址：主机名和端口号。参考守护进程布局-->
+        <property>
+                <name>dfs.namenode.secondary.http-address</name>
+                <value>192.168.1.10:9868</value>
+        </property>
+<!-- namenode守护进程的http地址：主机名和端口号。参考守护进程布局-->
+        <property>
+                <name>dfs.namenode.http-address</name>
+                <value>192.168.1.10:9870</value>
+        </property>
+<!--是否开通HDFS的Web接口，3.0版本后默认端口是9870-->
+        <property>
+		<name>dfs.webhdfs.enabled</name>
+                <value>true</value>
+        </property>
+</configuration>
