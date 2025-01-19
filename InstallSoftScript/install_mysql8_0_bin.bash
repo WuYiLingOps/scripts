@@ -20,6 +20,7 @@ mysql8=`ls | grep "mysql.*gz"`
 if [ $? -ne 0 ];then
   #拉取mysql8.0
   wget https://downloads.mysql.com/archives/get/p/23/file/mysql-8.0.11-linux-glibc2.12-x86_64.tar.gz
+  mysql8=`ls | grep "mysql.*gz"`
   tar -zxvf $mysql8 -C /usr/local/
 else
   tar -zxvf $mysql8 -C /usr/local/
