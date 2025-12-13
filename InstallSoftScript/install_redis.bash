@@ -1,7 +1,15 @@
 #!/bin/bash
-# author YiLing Wu (hj)
-# date 2023-12-23 15:21
-# description: centos下编译安装redis,并完成基础配置
+#
+#********************************************************************
+#Author:           YiLing Wu (hj)
+#email:            huangjing510@126.com
+#Date:             2023-12-23
+#FileName:         install_redis.bash
+#URL:              http://42.194.242.109:510/
+#Description:      CentOS下编译安装Redis并完成基础配置
+#Copyright (C):    2024 All rights reserved
+#********************************************************************
+#
 
 #354  logfile /xxxx/redis.log #指定日志生成路径和文件名字 （自行修改配置文件）
 #504  dir /usr/local/redis/data          #指定应用持久化路径（自行修改配置文件）
