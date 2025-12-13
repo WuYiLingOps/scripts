@@ -1,7 +1,15 @@
 #!/bin/bash
-# author YiLing Wu (hj)
-# date 2023-12-23 15:21
-# description: 源码来自github nvm官网
+#
+#********************************************************************
+#Author:           YiLing Wu (hj)
+#email:            huangjing510@126.com
+#Date:             2023-12-23
+#FileName:         install_nvm.bash
+#URL:              http://42.194.242.109:510/
+#Description:      安装NVM（Node Version Manager），源码来自GitHub NVM官网
+#Copyright (C):    2024 All rights reserved
+#********************************************************************
+#
 #!/usr/bin/env bash
 
 { # this ensures the entire script is downloaded #
