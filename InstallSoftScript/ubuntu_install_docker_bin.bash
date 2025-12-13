@@ -1,8 +1,15 @@
 #!/bin/bash
-
-# author YiLing Wu (hj)
-# date 2023-12-23 15:21
-# description: ubuntu环境下简易二进制安装docker
+#
+#********************************************************************
+#Author:           YiLing Wu (hj)
+#email:            huangjing510@126.com
+#Date:             2023-12-23
+#FileName:         ubuntu_install_docker_bin.bash
+#URL:              http://42.194.242.109:510/
+#Description:      Ubuntu环境下简易二进制安装Docker
+#Copyright (C):    2024 All rights reserved
+#********************************************************************
+#
 
 # 生产环境采用二进制部署
 # 确保环境没有安装docker
