@@ -1,7 +1,15 @@
 #!/bin/bash
-# author YiLing Wu (hj)
-# date 2023-12-23 15:21
-# description: 清除k8s初始化数据
+#
+#********************************************************************
+#Author:           YiLing Wu (hj)
+#email:            huangjing510@126.com
+#Date:             2023-12-23
+#FileName:         clean-k8s.bash
+#URL:              http://42.194.242.109:510/
+#Description:      清除K8s初始化数据
+#Copyright (C):    2024 All rights reserved
+#********************************************************************
+#
 
 kubeadm reset <<EOF
 y
