@@ -1,7 +1,15 @@
 #!/bin/bash
-# author YiLing Wu (hj)
-# date 2023-12-23 15:21
-# description: centos环境下安装zabbix-agent客户端
+#
+#********************************************************************
+#Author:           YiLing Wu (hj)
+#email:            huangjing510@126.com
+#Date:             2023-12-23
+#FileName:         install-zabbix-agent2.bash
+#URL:              http://42.194.242.109:510/
+#Description:      CentOS环境下安装Zabbix Agent2客户端
+#Copyright (C):    2024 All rights reserved
+#********************************************************************
+#
 
 
 #安装客户端
