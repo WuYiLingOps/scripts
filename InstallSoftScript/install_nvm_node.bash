@@ -1,7 +1,15 @@
 #!/bin/bash
-# author YiLing Wu (hj)
-# date 2023-12-23 15:21
-# description: 检查本地是否存在nvm,并使用nvm安装node18,并配置淘宝源
+#
+#********************************************************************
+#Author:           YiLing Wu (hj)
+#email:            huangjing510@126.com
+#Date:             2023-12-23
+#FileName:         install_nvm_node.bash
+#URL:              http://42.194.242.109:510/
+#Description:      检查本地是否存在NVM，并使用NVM安装Node18，并配置淘宝源
+#Copyright (C):    2024 All rights reserved
+#********************************************************************
+#
 
 # 检查 nvm 是否已安装
 command -v nvm > /dev/null
