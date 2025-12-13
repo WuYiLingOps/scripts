@@ -1,7 +1,15 @@
 #!/bin/bash
-# author YiLing Wu (hj)
-# date 2023-12-23 15:21
-# description: 源码编译安装MySQL8.0,编辑时间过久,谨慎选择
+#
+#********************************************************************
+#Author:           YiLing Wu (hj)
+#email:            huangjing510@126.com
+#Date:             2023-12-23
+#FileName:         install_compile_make_mysql8_0.bash
+#URL:              http://42.194.242.109:510/
+#Description:      源码编译安装MySQL8.0，编译时间过久，谨慎选择
+#Copyright (C):    2024 All rights reserved
+#********************************************************************
+#
 
 #cmake官网:https://cmake.org/download/
 #默认端口设置为3380
