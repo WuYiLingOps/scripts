@@ -1,7 +1,15 @@
 #!/bin/bash
-# author YiLing Wu (hj)
-# date 2023-12-23 15:21
-# description: centos下部署zookeeper kafka 集群
+#
+#********************************************************************
+#Author:           YiLing Wu (hj)
+#email:            huangjing510@126.com
+#Date:             2023-12-23
+#FileName:         install_kafka_zookeeper_bin.bash
+#URL:              http://42.194.242.109:510/
+#Description:      CentOS下部署Zookeeper和Kafka集群
+#Copyright (C):    2024 All rights reserved
+#********************************************************************
+#
 
 #使用sourc运行脚本
 
