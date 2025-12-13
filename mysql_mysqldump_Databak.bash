@@ -1,7 +1,15 @@
 #!/bin/bash
-# author YiLing Wu (hj)
-# date 2023-12-23 15:21
-# description: mysql 数据备份
+#
+#********************************************************************
+#Author:           YiLing Wu (hj)
+#email:            huangjing510@126.com
+#Date:             2023-12-23
+#FileName:         mysql_mysqldump_Databak.bash
+#URL:              http://42.194.242.109:510/
+#Description:      MySQL数据备份脚本
+#Copyright (C):    2024 All rights reserved
+#********************************************************************
+#
 
 #分库备分是为了解决上面多库备份在同一个备份文件造成的问题, 一般做法是使用脚本，然后将脚本加入定时任务定期执行
 MYSQL_CMD="/usr/local/mysql/bin/mysqldump"
