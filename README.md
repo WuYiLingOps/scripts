@@ -36,8 +36,6 @@
 - [开发工具脚本 (dev_tools/)](#开发工具脚本)
   - Git仓库同步
 
-### 子目录
-
 - [软件安装脚本 (InstallSoftScript/)](#软件安装脚本)
   - [MySQL安装脚本](#mysql安装脚本)
   - [Docker安装脚本](#docker安装脚本)
