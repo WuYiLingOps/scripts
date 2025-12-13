@@ -1,6 +1,14 @@
-# Author: YiLing Wu (hj)
-# Date: 2024-12-23
-# Description: 基于提前构建的 sshjdk:guet 镜像，使用多阶段构建 Hive 环境。需要手动初始化并配置 MySQL 地址。
+#
+#********************************************************************
+#Author:           YiLing Wu (hj)
+#email:            huangjing510@126.com
+#Date:             2024-12-23
+#FileName:         Dockerfile_hive
+#URL:              http://42.194.242.109:510/
+#Description:      基于提前构建的 sshjdk:guet 镜像，使用多阶段构建 Hive 环境。需要手动初始化并配置 MySQL 地址
+#Copyright (C):    2024 All rights reserved
+#********************************************************************
+#
 
 # 第一阶段：构建 Hive 环境
 FROM hadoop:guet AS build
