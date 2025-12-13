@@ -1,7 +1,15 @@
 #!/bin/bash
-# author YiLing Wu (hj)
-# date 2023-12-23 15:21
-# description: 删除指定用户,并选择是否清除用户数据
+#
+#********************************************************************
+#Author:           YiLing Wu (hj)
+#email:            huangjing510@126.com
+#Date:             2023-12-23
+#FileName:         del_user.bash
+#URL:              http://42.194.242.109:510/
+#Description:      删除指定用户，并选择是否清除用户数据
+#Copyright (C):    2024 All rights reserved
+#********************************************************************
+#
 
 read -p "输入要删除的用户:" username
 read -p "是否同时删除用户目录(y/n):" yn
