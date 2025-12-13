@@ -19,7 +19,7 @@
 grep PS1 /etc/profile >/dev/null
 if [ $? -ne 0 ];then
 cat >>/etc/profile <<EOF
-export PS1='[\[\e[34;1m\]\u@\[\e[0m\]\[\e[32;1m\]\H\[\e[0m\]\[\e[31;1m\] \w\[\e[0m\]]\$ '
+export PS1='[\[\e[34;1m\]\u\[\e[0m\]@\[\e[32;1m\]\H\[\e[0m\]\[\e[31;1m\] \w\[\e[0m\]]\$ '
 EOF
 fi
 
