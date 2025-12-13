@@ -1,4 +1,17 @@
 #!/bin/bash
+#
+#********************************************************************
+#Author:           YiLing Wu (hj)
+#email:            huangjing510@126.com
+#Date:             2024-12-23
+#FileName:         jpsall
+#URL:              http://42.194.242.109:510/
+#Description:      查看集群所有节点的Java进程信息
+#Copyright (C):    2024 All rights reserved
+#********************************************************************
+#
+# Usage: bash jpsall
+
 hostname=`awk '!/^#/ && NF==2 {print $2}' /etc/hosts`
 for hostname in $hostname
 do
