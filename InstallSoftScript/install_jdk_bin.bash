@@ -1,7 +1,15 @@
 #!/bin/bash
-# author YiLing Wu (hj)
-# date 2023-12-23 15:21
-# description: centos下安装jdk脚本
+#
+#********************************************************************
+#Author:           YiLing Wu (hj)
+#email:            huangjing510@126.com
+#Date:             2023-12-23
+#FileName:         install_jdk_bin.bash
+#URL:              http://42.194.242.109:510/
+#Description:      CentOS下安装JDK脚本
+#Copyright (C):    2024 All rights reserved
+#********************************************************************
+#
 
 #上传jdk到脚本存放目录,再进行操作
 #因为涉及到环境变量,建议source运行脚本同时刷新环境变量
