@@ -1,7 +1,15 @@
 #!/bin/bash
-# author YiLing Wu (hj)
-# date 2023-12-23 15:21
-# description: centos下二进制安装MySQL8.0
+#
+#********************************************************************
+#Author:           YiLing Wu (hj)
+#email:            huangjing510@126.com
+#Date:             2023-12-23
+#FileName:         install_mysql8_0_bin.bash
+#URL:              http://42.194.242.109:510/
+#Description:      CentOS下二进制安装MySQL8.0
+#Copyright (C):    2024 All rights reserved
+#********************************************************************
+#
 
 #删除旧版本
 old(){
