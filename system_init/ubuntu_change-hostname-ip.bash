@@ -1,11 +1,3 @@
-###
- # @Author: 無以菱 2794998160@qq.com
- # @Date: 2025-12-13 15:41:11
- # @LastEditors: 無以菱 2794998160@qq.com
- # @LastEditTime: 2025-12-14 00:13:33
- # @FilePath: \wylblog_scripts\system_init\ubuntu_change-hostname-ip.bash
- # @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
-### 
 #!/bin/bash
 #
 #********************************************************************
