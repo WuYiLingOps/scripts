@@ -1,7 +1,15 @@
 #!/bin/bash
-# author YiLing Wu (hj)
-# date 2023-12-23 15:21
-# description: centos下编译安装nginx
+#
+#********************************************************************
+#Author:           YiLing Wu (hj)
+#email:            huangjing510@126.com
+#Date:             2023-12-23
+#FileName:         install_nginx.bash
+#URL:              http://42.194.242.109:510/
+#Description:      CentOS下编译安装Nginx
+#Copyright (C):    2024 All rights reserved
+#********************************************************************
+#
 
 #使用source运行脚本
 #默认安装在/usr/local/nginx
