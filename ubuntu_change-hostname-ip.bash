@@ -1,9 +1,16 @@
 #!/bin/bash
-# author YiLing Wu (hj)
-# date 2023-12-23 15:21
-# description: ubuntu模板机下,快速修改主机名和ip地址
-# 脚本用法:
-# bash /server/scripts/change.sh 主机名  192.168.10.7 
+#
+#********************************************************************
+#Author:           YiLing Wu (hj)
+#email:            huangjing510@126.com
+#Date:             2023-12-23
+#FileName:         ubuntu_change-hostname-ip.bash
+#URL:              http://42.194.242.109:510/
+#Description:      Ubuntu模板机下快速修改主机名和IP地址
+#Copyright (C):    2024 All rights reserved
+#********************************************************************
+#
+# Usage: bash ubuntu_change-hostname-ip.bash <主机名> <IP地址> 
 
 #模板机ip地址
 ip=`hostname -I |awk '{print $1}'|sed 's#.*\.##g'`
