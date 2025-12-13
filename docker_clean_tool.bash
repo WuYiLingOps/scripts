@@ -1,8 +1,15 @@
 #!/bin/bash
-# ser: huangjing 2023.11.08-18.16
-# author YiLing Wu (hj)
-# date 2023-12-23 15:21
-# description: docker镜像清理工具
+#
+#********************************************************************
+#Author:           YiLing Wu (hj)
+#email:            huangjing510@126.com
+#Date:             2023-12-23
+#FileName:         docker_clean_tool.bash
+#URL:              http://42.194.242.109:510/
+#Description:      Docker镜像清理工具
+#Copyright (C):    2024 All rights reserved
+#********************************************************************
+#
 
 #用于快捷删除docker镜像/容器脚本
 tool(){
