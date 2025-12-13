@@ -12,14 +12,16 @@
 #
 # Usage: bash anolisOS_change-hostname-ip.bash <主机名> <IP地址> 
 
-#模板机ip地址
+#获取当前IP地址的前三段（如：192.168.10.）
+ip_prefix=`hostname -I | awk -F '.' '{print $1"."$2"."$3"."}'`
+#模板机ip地址的最后一段
 ip=`hostname -I |awk '{print $1}'|sed 's#.*\.##g'`
-#新的ip
+#新的ip地址的最后一段
 ip_new=`echo $2 |sed 's#^.*\.##g'`
 #新的主机名
 hostname=$1
 #修改ip
-sed -i "s#192.168.10.$ip#192.168.10.$ip_new#g" /etc/sysconfig/network-scripts/ifcfg-ens33
+sed -i "s#$ip_prefix$ip#$ip_prefix$ip_new#g" /etc/sysconfig/network-scripts/ifcfg-ens33
 
 #龙溪重启网络服务
 #nmcli device show                   # 查看获取的IP地址
