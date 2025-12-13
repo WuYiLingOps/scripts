@@ -1,8 +1,15 @@
 #!/bin/bash
-
-# author: YiLing Wu (hj)
-# date: 2023-12-23
-# description: ubuntu环境下自动化安装 Docker，支持删除旧版本、配置阿里云镜像源加速并安装新版本。
+#
+#********************************************************************
+#Author:           YiLing Wu (hj)
+#email:            huangjing510@126.com
+#Date:             2023-12-23
+#FileName:         ubuntu_install_docker_aliyun.bash
+#URL:              http://42.194.242.109:510/
+#Description:      Ubuntu环境下自动化安装Docker，支持删除旧版本、配置阿里云镜像源加速并安装新版本
+#Copyright (C):    2024 All rights reserved
+#********************************************************************
+#
 
 # 删除旧版本 Docker
 remove_old_versions() {
