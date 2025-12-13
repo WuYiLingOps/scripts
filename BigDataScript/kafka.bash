@@ -1,7 +1,16 @@
 #!/bin/bash
-# author YiLing Wu (hj)
-# date 2024-12-23 15:21
-# description: kafka集群一键启动
+#
+#********************************************************************
+#Author:           YiLing Wu (hj)
+#email:            huangjing510@126.com
+#Date:             2024-12-23
+#FileName:         kafka.bash
+#URL:              http://42.194.242.109:510/
+#Description:      Kafka集群管理脚本，支持启动、停止操作
+#Copyright (C):    2024 All rights reserved
+#********************************************************************
+#
+# Usage: bash kafka.bash [start|stop]
 
 # 获取所有主机名
 hostname=$(awk '!/^#/ && NF==2 {print $2}' /etc/hosts)
