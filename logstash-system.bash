@@ -1,9 +1,16 @@
 #!/bin/bash
-# author YiLing Wu (hj)
-# date 2023-12-23 15:21
-# description: logstash启动脚本
-
-#启动方式: 脚本名 + [start,stop,status] 配置文件[.conf]
+#
+#********************************************************************
+#Author:           YiLing Wu (hj)
+#email:            huangjing510@126.com
+#Date:             2023-12-23
+#FileName:         logstash-system.bash
+#URL:              http://42.194.242.109:510/
+#Description:      Logstash启动脚本
+#Copyright (C):    2024 All rights reserved
+#********************************************************************
+#
+# Usage: bash logstash-system.bash [start|stop|status] <配置文件.conf>
 #传参(start stop restart status)
 a=$1
 #选择需要启动的配置文件
