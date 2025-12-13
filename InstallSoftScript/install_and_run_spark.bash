@@ -1,8 +1,15 @@
 #!/bin/bash
-
-# author: YiLing Wu (hj)
-# date: 2023-12-23
-# description: 自动化安装和配置 Spark，支持添加环境变量、配置 YARN 提交任务等。
+#
+#********************************************************************
+#Author:           YiLing Wu (hj)
+#email:            huangjing510@126.com
+#Date:             2023-12-23
+#FileName:         install_and_run_spark.bash
+#URL:              http://42.194.242.109:510/
+#Description:      自动化安装和配置Spark，支持添加环境变量、配置YARN提交任务等
+#Copyright (C):    2024 All rights reserved
+#********************************************************************
+#
 
 # 定义变量
 JDK_HOME="/opt/jdk"
