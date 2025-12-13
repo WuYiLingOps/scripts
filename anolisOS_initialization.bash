@@ -1,7 +1,15 @@
 #!/bin/bash
-# author YiLing Wu (hj)
-# date 2023-7-23 15:21
-# description: anolisOS虚拟机初始化脚本
+#
+#********************************************************************
+#Author:           YiLing Wu (hj)
+#email:            huangjing510@126.com
+#Date:             2023-7-23
+#FileName:         anolisOS_initialization.bash
+#URL:              http://42.194.242.109:510/
+#Description:      AnolisOS虚拟机初始化脚本
+#Copyright (C):    2024 All rights reserved
+#********************************************************************
+#
 
 # echo "网卡配置默认ens33"
 # 安装格式化工具
