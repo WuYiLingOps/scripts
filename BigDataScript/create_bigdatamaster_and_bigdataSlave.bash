@@ -1,8 +1,16 @@
 #!/bin/bash
-# bash create_bigdata1.sh 主机名
-# author YiLing Wu (hj)
-# date 2024-12-23 15:21
-# description: 根据创建的基础镜像创建容器
+#
+#********************************************************************
+#Author:           YiLing Wu (hj)
+#email:            huangjing510@126.com
+#Date:             2024-12-23
+#FileName:         create_bigdatamaster_and_bigdataSlave.bash
+#URL:              http://42.194.242.109:510/
+#Description:      根据创建的基础镜像创建容器
+#Copyright (C):    2024 All rights reserved
+#********************************************************************
+#
+# Usage: bash create_bigdatamaster_and_bigdataSlave.bash [bigdata1|master|bigdata2|slave1|bigdata3|slave2]
 
 # Docker镜像地址
 images="bigdatamaster:guet"
