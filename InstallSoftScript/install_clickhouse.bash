@@ -1,7 +1,15 @@
 #!/bin/bash
-# author YiLing Wu (hj)
-# date 2023-12-23 15:21
-# description: 安装clickhouse
+#
+#********************************************************************
+#Author:           YiLing Wu (hj)
+#email:            huangjing510@126.com
+#Date:             2023-12-23
+#FileName:         install_clickhouse.bash
+#URL:              http://42.194.242.109:510/
+#Description:      安装ClickHouse
+#Copyright (C):    2024 All rights reserved
+#********************************************************************
+#
 
 #脚本放再tgz包目录执行
 mkdir /opt/clickhouse
