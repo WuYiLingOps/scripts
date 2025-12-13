@@ -1,7 +1,15 @@
 #!/bin/bash
-# author YiLing Wu (hj)
-# date 2023-12-23 15:21
-# description: k8s指令自动补全
-#使用source运行
+#
+#********************************************************************
+#Author:           YiLing Wu (hj)
+#email:            huangjing510@126.com
+#Date:             2023-12-23
+#FileName:         k8s-自动补全脚本.bash
+#URL:              http://42.194.242.109:510/
+#Description:      K8s指令自动补全配置脚本
+#Copyright (C):    2024 All rights reserved
+#********************************************************************
+#
+# Usage: source k8s-自动补全脚本.bash
 echo "source <(kubectl completion bash)" >> ~/.bashrc
 source ~/.bashrc
