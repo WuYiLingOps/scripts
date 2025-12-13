@@ -1,7 +1,15 @@
 #!/bin/bash
-# author YiLing Wu (hj)
-# date 2023-12-23 15:21
-# description: 此脚本为一键安装ftp并修改用户上传文件目录脚本
+#
+#********************************************************************
+#Author:           YiLing Wu (hj)
+#email:            huangjing510@126.com
+#Date:             2023-12-23
+#FileName:         ftp_intall_new.bash
+#URL:              http://42.194.242.109:510/
+#Description:      一键安装FTP并修改用户上传文件目录
+#Copyright (C):    2024 All rights reserved
+#********************************************************************
+#
 
 read -p " 请输入用户名字:" name
 read -p "请输入所指定账户文件绝对路径:" dir
