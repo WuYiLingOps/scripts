@@ -1,7 +1,15 @@
 #!/bin/bash
-# author YiLing Wu (hj)
-# date 2023-12-23 15:21
-# description: centos环境下安装redis集群
+#
+#********************************************************************
+#Author:           YiLing Wu (hj)
+#email:            huangjing510@126.com
+#Date:             2023-12-23
+#FileName:         install_redis_cluster.bash
+#URL:              http://42.194.242.109:510/
+#Description:      CentOS环境下安装Redis集群
+#Copyright (C):    2024 All rights reserved
+#********************************************************************
+#
 
 grep "redis001" /etc/hosts >/dev/null
 if [ $? -eq 1 ];then
