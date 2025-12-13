@@ -1,7 +1,15 @@
 #!/bin/bash
-# author YiLing Wu (hj)
-# date 2023-12-23 15:21
-# description: 编写集群配置模板
+#
+#********************************************************************
+#Author:           YiLing Wu (hj)
+#email:            huangjing510@126.com
+#Date:             2023-12-23
+#FileName:         集群配置脚本模板.bash
+#URL:              http://42.194.242.109:510/
+#Description:      集群配置脚本模板
+#Copyright (C):    2024 All rights reserved
+#********************************************************************
+#
 
 grep "elk" /etc/hosts >/dev/null
 if [ $? -eq 1 ];then
