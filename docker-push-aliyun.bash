@@ -1,8 +1,16 @@
 #!/bin/bash
-# author YiLing Wu (hj)
-# date 2023-12-23 15:21
-# description: 将本地docker镜像上传至阿里云镜像仓库
-# 登录:	docker login --username=2794998160@qq.com registry.cn-hangzhou.aliyuncs.com
+#
+#********************************************************************
+#Author:           YiLing Wu (hj)
+#email:            huangjing510@126.com
+#Date:             2023-12-23
+#FileName:         docker-push-aliyun.bash
+#URL:              http://42.194.242.109:510/
+#Description:      将本地Docker镜像上传至阿里云镜像仓库
+#Copyright (C):    2024 All rights reserved
+#********************************************************************
+#
+# 登录: docker login --username=2794998160@qq.com registry.cn-hangzhou.aliyuncs.com
 
 aliyun() {
 Registry="registry.cn-hangzhou.aliyuncs.com/$Registry_id/"
