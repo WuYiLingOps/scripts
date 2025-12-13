@@ -1,7 +1,15 @@
 #!/bin/bash
-# author YiLing Wu (hj)
-# date 2023-12-23 15:21
-# description: centos下二进制安装MySQL5.7,并实现多实例
+#
+#********************************************************************
+#Author:           YiLing Wu (hj)
+#email:            huangjing510@126.com
+#Date:             2023-12-23
+#FileName:         install_mysql5_7_Multi-instance.bash
+#URL:              http://42.194.242.109:510/
+#Description:      CentOS下二进制安装MySQL5.7并实现多实例
+#Copyright (C):    2024 All rights reserved
+#********************************************************************
+#
 
 read -p "请设置MySQL密码：" passwd_mysql
 read -p "请输入版本号5.7.xx:" num
