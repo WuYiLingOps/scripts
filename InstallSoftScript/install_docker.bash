@@ -1,7 +1,15 @@
 #!/bin/bash
-# author YiLing Wu (hj)
-# date 2023-12-23 15:21
-# description: yum安装docker
+#
+#********************************************************************
+#Author:           YiLing Wu (hj)
+#email:            huangjing510@126.com
+#Date:             2023-12-23
+#FileName:         install_docker.bash
+#URL:              http://42.194.242.109:510/
+#Description:      使用YUM安装Docker
+#Copyright (C):    2024 All rights reserved
+#********************************************************************
+#
 
 #卸载旧版Docker
 remove_old_version(){
