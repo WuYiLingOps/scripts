@@ -1,7 +1,16 @@
 #!/bin/bash
-# author YiLing Wu (hj)
-# date 2024-12-23 15:21
-# description: hiveserver2 && HiveMetastore 启动脚本
+#
+#********************************************************************
+#Author:           YiLing Wu (hj)
+#email:            huangjing510@126.com
+#Date:             2024-12-23
+#FileName:         hiveservices.bash
+#URL:              http://42.194.242.109:510/
+#Description:      HiveServer2和HiveMetastore服务管理脚本，支持启动、停止、重启、查看状态
+#Copyright (C):    2024 All rights reserved
+#********************************************************************
+#
+# Usage: bash hiveservices.bash [start|stop|restart|status]
 
 HIVE_LOG_DIR=$HIVE_HOME/logs
 if [ ! -d $HIVE_LOG_DIR ]
