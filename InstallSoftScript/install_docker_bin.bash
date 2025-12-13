@@ -1,8 +1,15 @@
 #!/bin/bash
-
-# author YiLing Wu (hj)
-# date 2023-12-23 15:21
-# description: centos下yum环境二进制安装docker
+#
+#********************************************************************
+#Author:           YiLing Wu (hj)
+#email:            huangjing510@126.com
+#Date:             2023-12-23
+#FileName:         install_docker_bin.bash
+#URL:              http://42.194.242.109:510/
+#Description:      CentOS下YUM环境二进制安装Docker
+#Copyright (C):    2024 All rights reserved
+#********************************************************************
+#
 
 # 生产环境采用二进制部署
 # docker 数据存储至额外盘,不存放在系统盘
