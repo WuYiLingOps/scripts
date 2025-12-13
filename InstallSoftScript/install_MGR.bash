@@ -1,7 +1,15 @@
 #!/bin/bash
-# author YiLing Wu (hj)
-# date 2023-12-23 15:21
-# description: centos下安装MGR单组集群
+#
+#********************************************************************
+#Author:           YiLing Wu (hj)
+#email:            huangjing510@126.com
+#Date:             2023-12-23
+#FileName:         install_MGR.bash
+#URL:              http://42.194.242.109:510/
+#Description:      CentOS下安装MGR单组集群
+#Copyright (C):    2024 All rights reserved
+#********************************************************************
+#
 
 #MGR单组集群
 grep "db01" /etc/hosts >/dev/null
