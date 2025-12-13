@@ -1,7 +1,15 @@
 #!/bin/bash
-# author YiLing Wu (hj)
-# date 2023-12-23 15:21
-# description: centos下更新gcc并源码编译安装MySQL8.0
+#
+#********************************************************************
+#Author:           YiLing Wu (hj)
+#email:            huangjing510@126.com
+#Date:             2023-12-23
+#FileName:         update_gcc_cmake_install_MYSQL8.bash
+#URL:              http://42.194.242.109:510/
+#Description:      CentOS下更新GCC并源码编译安装MySQL8.0
+#Copyright (C):    2024 All rights reserved
+#********************************************************************
+#
 
 #cmake官网:https://cmake.org/download/
 
