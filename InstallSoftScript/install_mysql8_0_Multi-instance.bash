@@ -1,7 +1,15 @@
 #!/bin/bash
-# author YiLing Wu (hj)
-# date 2023-12-23 15:21
-# description: centos下源码编译安装MySQL8.0,并实现多实例
+#
+#********************************************************************
+#Author:           YiLing Wu (hj)
+#email:            huangjing510@126.com
+#Date:             2023-12-23
+#FileName:         install_mysql8_0_Multi-instance.bash
+#URL:              http://42.194.242.109:510/
+#Description:      CentOS下源码编译安装MySQL8.0并实现多实例
+#Copyright (C):    2024 All rights reserved
+#********************************************************************
+#
 
 #cmake官网:https://cmake.org/download/
 #默认端口设置为3380
