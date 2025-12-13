@@ -1,7 +1,15 @@
 #!/bin/bash
-# author YiLing Wu (hj)
-# date 2023-12-23 15:21
-# description: centos环境yum源配置(清华园已放弃)
+#
+#********************************************************************
+#Author:           YiLing Wu (hj)
+#email:            huangjing510@126.com
+#Date:             2023-12-23
+#FileName:         centos_yum.bash
+#URL:              http://42.194.242.109:510/
+#Description:      CentOS环境YUM源配置（清华源已放弃）
+#Copyright (C):    2024 All rights reserved
+#********************************************************************
+#
 
 yum_local() {
 #挂载镜像,配置本地仓库
