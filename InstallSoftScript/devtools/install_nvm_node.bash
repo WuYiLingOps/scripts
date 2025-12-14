@@ -11,40 +11,69 @@
 #********************************************************************
 #
 
+# ==================== 颜色定义 ====================
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
+BLUE='\033[0;34m'
+PURPLE='\033[0;35m'
+CYAN='\033[0;36m'
+WHITE='\033[0;37m'
+BOLD='\033[1m'
+RESET='\033[0m'
+
+# ==================== 函数定义 ====================
+# 带颜色的日志输出
+log_info() {
+    echo -e "${GREEN}[INFO]${RESET} $1"
+}
+log_warn() {
+    echo -e "${YELLOW}[WARN]${RESET} $1"
+}
+log_error() {
+    echo -e "${RED}[ERROR]${RESET} $1"
+}
+log_step() {
+    echo -e "${BLUE}[STEP]${RESET} ${BOLD}$1${RESET}"
+}
+
 # 检查 nvm 是否已安装
 command -v nvm > /dev/null
 if [ $? -ne 0 ]; then
     # 下载并安装 nvm
+    log_step "下载并安装 nvm"
     wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
     if [ $? -eq 0 ]; then
-        echo "nvm 安装成功..."
+        log_info "nvm 安装成功"
         source ~/.bashrc
-        echo "nvm 版本号: $(nvm --version)"
+        log_info "nvm 版本号: ${PURPLE}$(nvm --version)${RESET}"
     else
-        echo "nvm 安装失败"
+        log_error "nvm 安装失败"
         exit 1
     fi
 else
-    echo "nvm 已存在，版本号为: $(nvm --version)"
+    log_warn "nvm 已存在，版本号为: ${PURPLE}$(nvm --version)${RESET}"
 fi
 
 # 检查 node 是否已安装
+log_step "检查 Node.js 安装状态"
 command -v node > /dev/null
 if [ $? -ne 0 ]; then
-    echo "安装 Node.js 版本 18..."
+    log_step "安装 Node.js 版本 18"
     nvm install 18
     nvm use 18
     nvm alias default 18
     nvm ls
-    echo "Node.js 版本: $(node -v)"
+    log_info "Node.js 版本: ${PURPLE}$(node -v)${RESET}"
 
     # 备份当前 npm 源
+    log_step "配置 npm 镜像源"
     npm_registry_backup=$(npm get registry)
-    echo "备份当前 npm 源: $npm_registry_backup"
+    log_info "备份当前 npm 源: ${CYAN}$npm_registry_backup${RESET}"
 
     # 设置 npm 镜像源
     npm config set registry https://registry.npmmirror.com
-    echo "当前 npm 源为: $(npm get registry)"
+    log_info "当前 npm 源为: ${CYAN}$(npm get registry)${RESET}"
 else
-    echo "本地 Node.js 已存在，版本为: $(node -v)"
+    log_warn "本地 Node.js 已存在，版本为: ${PURPLE}$(node -v)${RESET}"
 fi
