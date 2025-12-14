@@ -194,6 +194,7 @@
 | `install_nvm.bash` | 安装NVM（Node Version Manager），源码来自GitHub NVM官网 |
 | `install_nvm_node.bash` | 检查本地是否存在NVM，并使用NVM安装Node18，并配置淘宝源 |
 | `install_python3.bash` | CentOS下使用YUM简易安装Python3 |
+| `install_golang.sh` | 自动化安装Go语言环境，支持下载、解压、配置环境变量并验证安装 |
 
 #### 其他服务安装脚本
 
