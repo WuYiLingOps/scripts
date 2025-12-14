@@ -4,7 +4,7 @@
 #email:            huangjing510@126.com
 #Date:             2024-12-23
 #FileName:         Dockerfile_sshjdk
-#URL:              http://42.194.242.109:510/
+#URL:              http://huangjingblog.cn:510/
 #Description:      以 Ubuntu 20.04.3 为基础，通过多阶段构建方式构建大数据基础环境（SSH免密+JDK）
 #Copyright (C):    2024 All rights reserved
 #********************************************************************

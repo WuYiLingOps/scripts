@@ -5,7 +5,7 @@
 #email:            huangjing510@126.com
 #Date:             2023-12-23
 #FileName:         docker-push-aliyun.bash
-#URL:              http://42.194.242.109:510/
+#URL:              http://huangjingblog.cn:510/
 #Description:      将本地Docker镜像上传至阿里云镜像仓库
 #Copyright (C):    2024 All rights reserved
 #********************************************************************

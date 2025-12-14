@@ -5,7 +5,7 @@
 #email:            huangjing510@126.com
 #Date:             2023-12-23
 #FileName:         install_nginx.bash
-#URL:              http://42.194.242.109:510/
+#URL:              http://huangjingblog.cn:510/
 #Description:      CentOS下编译安装Nginx
 #Copyright (C):    2024 All rights reserved
 #********************************************************************

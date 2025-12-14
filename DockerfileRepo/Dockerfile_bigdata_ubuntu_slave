@@ -4,7 +4,7 @@
 #email:            huangjing510@126.com
 #Date:             2024-12-23
 #FileName:         Dockerfile_bigdata_ubuntu_slave
-#URL:              http://42.194.242.109:510/
+#URL:              http://huangjingblog.cn:510/
 #Description:      封装大数据基础环境镜像（Slave节点），不包含基础安装包
 #Copyright (C):    2024 All rights reserved
 #********************************************************************

@@ -5,7 +5,7 @@
 #email:            huangjing510@126.com
 #Date:             2023-12-23
 #FileName:         docker_clean_tool.bash
-#URL:              http://42.194.242.109:510/
+#URL:              http://huangjingblog.cn:510/
 #Description:      Docker镜像清理工具
 #Copyright (C):    2024 All rights reserved
 #********************************************************************

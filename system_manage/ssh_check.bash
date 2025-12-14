@@ -5,7 +5,7 @@
 #email:            huangjing510@126.com
 #Date:             2023-12-23
 #FileName:         ssh_check.bash
-#URL:              http://42.194.242.109:510/
+#URL:              http://huangjingblog.cn:510/
 #Description:      通过SSH批量在多台服务器上执行命令，适用于自动化任务，例如检查服务器状态、更新配置或管理服务
 #Copyright (C):    2024 All rights reserved
 #********************************************************************

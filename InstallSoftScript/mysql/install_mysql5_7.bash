@@ -5,7 +5,7 @@
 #email:            huangjing510@126.com
 #Date:             2023-12-23
 #FileName:         install_mysql5_7.bash
-#URL:              http://42.194.242.109:510/
+#URL:              http://huangjingblog.cn:510/
 #Description:      CentOS下安装MySQL5.7，可选择安装方式
 #Copyright (C):    2024 All rights reserved
 #********************************************************************

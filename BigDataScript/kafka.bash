@@ -5,7 +5,7 @@
 #email:            huangjing510@126.com
 #Date:             2024-12-23
 #FileName:         kafka.bash
-#URL:              http://42.194.242.109:510/
+#URL:              http://huangjingblog.cn:510/
 #Description:      Kafka集群管理脚本，支持启动、停止操作
 #Copyright (C):    2024 All rights reserved
 #********************************************************************

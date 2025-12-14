@@ -5,7 +5,7 @@
 #email:            huangjing510@126.com
 #Date:             2023-12-23
 #FileName:         ssh7.4_update_ssh8.9.bash
-#URL:              http://42.194.242.109:510/
+#URL:              http://huangjingblog.cn:510/
 #Description:      CentOS下更新SSH 7.4到SSH 8.9
 #Copyright (C):    2024 All rights reserved
 #********************************************************************

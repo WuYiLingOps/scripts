@@ -5,7 +5,7 @@
 #email:            huangjing510@126.com
 #Date:             2023-12-23
 #FileName:         nginx_create_local_SSL.bash
-#URL:              http://42.194.242.109:510/
+#URL:              http://huangjingblog.cn:510/
 #Description:      Nginx自签证书生成（仅限于测试环境）
 #Copyright (C):    2024 All rights reserved
 #********************************************************************

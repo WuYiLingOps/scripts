@@ -5,7 +5,7 @@
 #email:            huangjing510@126.com
 #Date:             2023-12-23
 #FileName:         update_gcc_cmake_install_MYSQL8.bash
-#URL:              http://42.194.242.109:510/
+#URL:              http://huangjingblog.cn:510/
 #Description:      CentOS下更新GCC并源码编译安装MySQL8.0
 #Copyright (C):    2024 All rights reserved
 #********************************************************************

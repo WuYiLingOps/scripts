@@ -5,7 +5,7 @@
 #email:            huangjing510@126.com
 #Date:             2024-12-23
 #FileName:         ssh-key_scp.bash
-#URL:              http://42.194.242.109:510/
+#URL:              http://huangjingblog.cn:510/
 #Description:      在所有节点运行此脚本，实现免密登录
 #Copyright (C):    2024 All rights reserved
 #********************************************************************

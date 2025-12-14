@@ -5,7 +5,7 @@
 #email:            huangjing510@126.com
 #Date:             2023-12-23
 #FileName:         install_php83.bash
-#URL:              http://42.194.242.109:510/
+#URL:              http://huangjingblog.cn:510/
 #Description:      安装PHP 8.3版本
 #Copyright (C):    2024 All rights reserved
 #********************************************************************

@@ -4,7 +4,7 @@
 #email:            huangjing510@126.com
 #Date:             2024-12-23
 #FileName:         Dockerfile_hadoop
-#URL:              http://42.194.242.109:510/
+#URL:              http://huangjingblog.cn:510/
 #Description:      以提前构建的 sshjdk:guet 镜像为基础，通过多阶段构建方式构建 Hadoop 环境，后需手动初始化并配置集群信息
 #Copyright (C):    2024 All rights reserved
 #********************************************************************

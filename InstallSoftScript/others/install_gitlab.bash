@@ -5,7 +5,7 @@
 #email:            huangjing510@126.com
 #Date:             2023-12-23
 #FileName:         install_gitlab.bash
-#URL:              http://42.194.242.109:510/
+#URL:              http://huangjingblog.cn:510/
 #Description:      CentOS下安装GitLab脚本
 #Copyright (C):    2024 All rights reserved
 #********************************************************************

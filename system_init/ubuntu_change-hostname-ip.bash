@@ -5,7 +5,7 @@
 #email:            huangjing510@126.com
 #Date:             2023-12-23
 #FileName:         ubuntu_change-hostname-ip.bash
-#URL:              http://42.194.242.109:510/
+#URL:              http://huangjingblog.cn:510/
 #Description:      Ubuntu模板机下快速修改主机名和IP地址
 #Copyright (C):    2024 All rights reserved
 #********************************************************************

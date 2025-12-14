@@ -5,7 +5,7 @@
 #email:            huangjing510@126.com
 #Date:             2023-12-23
 #FileName:         ubuntu_install_docker_aliyun.bash
-#URL:              http://42.194.242.109:510/
+#URL:              http://huangjingblog.cn:510/
 #Description:      Ubuntu环境下自动化安装Docker，支持删除旧版本、配置阿里云镜像源加速并安装新版本
 #Copyright (C):    2024 All rights reserved
 #********************************************************************

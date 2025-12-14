@@ -5,7 +5,7 @@
 #email:            huangjing510@126.com
 #Date:             2023-7-24
 #FileName:         centos_initialization.bash
-#URL:              http://42.194.242.109:510/
+#URL:              http://huangjingblog.cn:510/
 #Description:      CentOS虚拟机初始化脚本
 #Copyright (C):    2024 All rights reserved
 #********************************************************************

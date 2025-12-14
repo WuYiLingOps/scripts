@@ -368,7 +368,7 @@ dos2unix install_MYSQL.sh
 
 - **作者：** YiLing Wu (hj)
 - **邮箱：** huangjing510@126.com
-- **URL：** http://42.194.242.109:510/
+- **URL：** http://huangjingblog.cn:510/
 
 ---
 

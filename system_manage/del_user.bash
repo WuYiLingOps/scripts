@@ -5,7 +5,7 @@
 #email:            huangjing510@126.com
 #Date:             2023-12-23
 #FileName:         del_user.bash
-#URL:              http://42.194.242.109:510/
+#URL:              http://huangjingblog.cn:510/
 #Description:      删除指定用户，并选择是否清除用户数据
 #Copyright (C):    2024 All rights reserved
 #********************************************************************

@@ -5,7 +5,7 @@
 #email:            huangjing510@126.com
 #Date:             2024-12-23
 #FileName:         start_flume_conf.bash
-#URL:              http://42.194.242.109:510/
+#URL:              http://huangjingblog.cn:510/
 #Description:      传参以配置文件启动flume
 #Copyright (C):    2024 All rights reserved
 #********************************************************************

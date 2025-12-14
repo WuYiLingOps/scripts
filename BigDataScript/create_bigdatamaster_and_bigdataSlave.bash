@@ -5,7 +5,7 @@
 #email:            huangjing510@126.com
 #Date:             2024-12-23
 #FileName:         create_bigdatamaster_and_bigdataSlave.bash
-#URL:              http://42.194.242.109:510/
+#URL:              http://huangjingblog.cn:510/
 #Description:      根据创建的基础镜像创建容器
 #Copyright (C):    2024 All rights reserved
 #********************************************************************
