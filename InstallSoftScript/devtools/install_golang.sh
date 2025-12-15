@@ -103,9 +103,19 @@ else
     check_result "添加Go环境变量"
 fi
 
-# 5. 生效环境变量并验证版本
-log_step "4. 生效环境变量并验证Go版本"
+# 5. 生效环境变量
+log_step "4. 生效环境变量"
 source "${PROFILE_FILE}"
+
+# 6. 配置 Go 代理（GOPROXY）
+log_step "5. 配置 Go 代理（GOPROXY）"
+go env -w GO111MODULE=on
+go env -w GOPROXY=https://goproxy.io,direct
+log_info "已设置 GO111MODULE: $(go env GO111MODULE)"
+log_info "已设置 GOPROXY: $(go env GOPROXY)"
+
+# 7. 验证Go版本
+log_step "6. 生效环境变量并验证Go版本"
 GO_VERSION=$(go version 2>/dev/null)
 if echo "${GO_VERSION}" | grep -q "go1.25.5"; then
     log_info "Go版本验证成功：${PURPLE}${GO_VERSION}${RESET}"
@@ -114,9 +124,10 @@ else
     exit 1
 fi
 
-# 6. 最终提示
+# 8. 最终提示
 log_step "Go 1.25.5 安装配置完成！"
 echo -e "${CYAN}使用说明：${RESET}"
 echo -e "  1. 立即生效环境变量：source /etc/profile"
 echo -e "  2. 验证Go版本：go version"
 echo -e "  3. GOPATH目录：\$HOME/go（会在首次使用时自动创建）"
+echo -e "  4. 当前 GOPROXY：$(go env GOPROXY)"
