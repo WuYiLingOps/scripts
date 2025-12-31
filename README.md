@@ -6,37 +6,37 @@
 
 ### 根目录脚本分类
 
-- [系统初始化脚本 (system_init/)](#系统初始化脚本)
+- [系统初始化脚本 (system_init/)](system_init/)
   - AnolisOS/CentOS/Ubuntu 系统初始化
   - YUM源配置
   - 主机名和IP地址配置
   - 网络配置脚本
 
-- [Docker工具脚本 (docker_tools/)](#docker工具脚本)
+- [Docker工具脚本 (docker_tools/)](docker_tools/)
   - Docker镜像清理
   - 镜像推送工具
   - 自动补全配置
 
-- [K8s相关脚本 (k8s/)](#k8s相关脚本)
+- [K8s相关脚本 (k8s/)](k8s/)
   - K8s环境清理
   - 自动补全配置
 
-- [系统管理脚本 (system_manage/)](#系统管理脚本)
+- [系统管理脚本 (system_manage/)](system_manage/)
   - 用户管理
   - SSH密钥分发
   - SSH批量执行
   - SSH版本升级
 
-- [服务管理脚本 (service_manage/)](#服务管理脚本)
+- [服务管理脚本 (service_manage/)](service_manage/)
   - FTP服务
   - Logstash服务
   - MySQL备份
   - Nginx SSL证书
 
-- [开发工具脚本 (dev_tools/)](#开发工具脚本)
+- [开发工具脚本 (dev_tools/)](dev_tools/)
   - Git仓库同步
 
-- [软件安装脚本 (InstallSoftScript/)](#软件安装脚本)
+- [软件安装脚本 (InstallSoftScript/)](InstallSoftScript/)
   - [MySQL安装脚本](#mysql安装脚本)
   - [Docker安装脚本](#docker安装脚本)
   - [Redis安装脚本](#redis安装脚本)
@@ -45,15 +45,15 @@
   - [开发工具安装脚本](#开发工具安装脚本)
   - [其他服务安装脚本](#其他服务安装脚本)
 
-- [大数据脚本 (BigDataScript/)](#大数据脚本)
+- [大数据脚本 (BigDataScript/)](BigDataScript/)
   - Hadoop/Hive/Kafka/Zookeeper 集群管理
   - 容器创建和管理
 
-- [大数据Docker配置 (BigdDataDockerConf/)](#大数据docker配置)
+- [大数据Docker配置 (BigdDataDockerConf/)](BigdDataDockerConf/)
   - Dockerfile集合
   - Hadoop/Hive配置文件
 
-- [Dockerfile仓库 (DockerfileRepo/)](#dockerfile仓库)
+- [Dockerfile仓库 (DockerfileRepo/)](DockerfileRepo/)
   - 各类Docker镜像构建文件
 
 ---
@@ -154,6 +154,7 @@
 | `install_docker_bin.bash` | CentOS下YUM环境二进制安装Docker |
 | `ubuntu_install_docker_aliyun.bash` | Ubuntu环境下自动化安装Docker，支持删除旧版本、配置阿里云镜像源加速并安装新版本 |
 | `ubuntu_install_docker_bin.bash` | Ubuntu环境下简易二进制安装Docker |
+| `install_harbor.bash` | Ubuntu / CentOS 下安装harbor |
 
 #### Redis安装脚本
 
