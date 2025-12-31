@@ -63,7 +63,8 @@ compile() {
 --with-http_gunzip_module \
 --with-http_gzip_static_module \
 --with-http_stub_status_module \
---with-stream
+--with-stream \
+--with-http_addition_module
 }
 
 #加入systemd管理

@@ -113,7 +113,8 @@ log_step "开始编译安装 Nginx 到 ${NGINX_PREFIX}"
     --with-http_gunzip_module \
     --with-http_gzip_static_module \
     --with-http_stub_status_module \
-    --with-stream
+    --with-stream \
+	--with-http_addition_module
 
 if [ $? -ne 0 ]; then
     log_error "configure 失败，请检查依赖是否齐全"
