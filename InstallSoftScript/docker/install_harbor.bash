@@ -4,7 +4,7 @@
 #Author:           huangjing
 #email:            huangjing510@126.com
 #Date:             2024-02-04
-#FileName:         install_harbor.sh
+#FileName:         install_harbor.bash
 #URL:              https://huangjingblog.cn/scripts
 #Description:      The test script
 #Copyright (C):    2024 All rights reserved
