@@ -5,7 +5,7 @@
 #email:            huangjing510@126.com
 #Date:             2025-12-14
 #FileName:         install_golang.sh
-#URL:              http://huangjingblog.cn:510/
+#URL:              https://script.huangjingblog.cn
 #Description:      自动化安装Go语言环境，支持下载、解压、配置环境变量并验证安装
 #Copyright (C):    2024 All rights reserved
 #********************************************************************
