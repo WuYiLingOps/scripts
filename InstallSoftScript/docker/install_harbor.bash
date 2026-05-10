@@ -1,12 +1,12 @@
 #!/bin/bash
 #
 #********************************************************************
-#Author:           huangjing
+#Author:           YiLing Wu (hj) 
 #email:            huangjing510@126.com
 #Date:             2024-02-04
 #FileName:         install_harbor.bash
-#URL:              https://huangjingblog.cn/scripts
-#Description:      The test script
+#URL:              https://script.huangjingblog.cn
+#Description:      自动部署Harbor私有镜像仓库，支持CentOS/Ubuntu系统，包含Docker、Docker Compose和Harbor的完整安装配置
 #Copyright (C):    2024 All rights reserved
 #********************************************************************
 #建议提前下载Harbor文件进行离线安装,也支持在线下载安装

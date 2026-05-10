@@ -5,7 +5,7 @@
 #email:            huangjing510@126.com
 #Date:             2023-12-23
 #FileName:         ubuntu_install_docker_bin.bash
-#URL:              http://huangjingblog.cn:510/
+#URL:              https://script.huangjingblog.cn
 #Description:      Ubuntu环境下简易二进制安装Docker
 #Copyright (C):    2024 All rights reserved
 #********************************************************************
